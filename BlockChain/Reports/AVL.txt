@@ -1,0 +1,28 @@
+digraph{
+ node[shape = record,style=filled, color = lightgray];rankdir=TB;
+label = "
+
+
+BLOCK OF BLOCKCHAIN";
+
+nodo66 [ label ="<C0>|66|<C1>"];
+nodo17 [ label ="<C0>|17|<C1>"];
+nodo2 [ label ="<C0>|2|<C1>"];
+nodo1 [ label ="<C0>|1|<C1>"];
+nodo2:C0->nodo1
+nodo3 [ label ="<C0>|3|<C1>"];
+nodo2:C1->nodo3
+nodo17:C0->nodo2
+nodo38 [ label ="<C0>|38|<C1>"];
+nodo29 [ label ="<C0>|29|<C1>"];
+nodo38:C0->nodo29
+nodo17:C1->nodo38
+nodo66:C0->nodo17
+nodo90 [ label ="<C0>|90|<C1>"];
+nodo89 [ label ="<C0>|89|<C1>"];
+nodo90:C0->nodo89
+nodo92 [ label ="<C0>|92|<C1>"];
+nodo90:C1->nodo92
+nodo66:C1->nodo90
+
+		}
