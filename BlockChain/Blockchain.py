@@ -20,6 +20,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
         self.last = None
+        self.current = None
         self.sizesBlockchain= 0
 
 
@@ -123,7 +124,7 @@ class LinkedList:
             aux = self.head
             #Imprimir Nodos
             while aux:
-                contenido = "CLASS= %s\\nTIMESTAMP= %s\\nPSHASH= %s\\nHASH= %s"%(aux.block.CLASS,aux.block.TIMESTAMP,aux.block.PREVIOUSHASH[0:40],aux.block.HASH[0:40])
+                contenido = "CLASS= %s\\nTIMESTAMP= %s\\nPSHASH= %s\\nHASH= %s"%(str(aux.block.CLASS),str(aux.block.TIMESTAMP),str(aux.block.PREVIOUSHASH[0:40]),str(aux.block.HASH[0:40]))
                 f_output.write("\t\t a%d[label=\"{|%s|}\"];\n"%(nodonum,contenido))
                 aux = aux.next
                 nodonum+=1

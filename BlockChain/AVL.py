@@ -241,74 +241,80 @@ class AVLTree:
     
     def Report_TrasversalPre(self): #Genera el Archivo .dot para la lista  enlazada y Genera la Imagen
         nodonum =0
-        f_output = open('Trasversal.txt','w')
+        f_output = open('Trasversalpre.txt','w')
         f_output.write("digraph{\n node[shape = record,style=filled];")
         f_output.write("rankdir=LR;\n")
         f_output.write("label = \"Trasversal Preorden Report\"; \n")
         f_output.write("\n")
         aux = self.print_tree_pre_order_traversal()
             #Imprimir Nodos
+        a=""
         for stringnodo in aux:
             f_output.write("\t\t a%d[label=\"{ %s }\"];\n"%(nodonum,stringnodo))
+            a = a + stringnodo + "->"
             nodonum+=1
-
+        print(a)
             #Enlazar Nodos
         for i in range(0,nodonum):
             if i != nodonum-1:
                 f_output.write("\t\t a%s->a%s[color=\"chocolate1\"];\n"%(i,i+1))
         f_output.write("\t }")
         f_output.close()
-        commandfile = 'dot -Tpng Trasversal.txt -o Trasversal.png'
+        commandfile = 'dot -Tpng Trasversalpre.txt -o Trasversalpre.png'
         start_file(commandfile)
-        path = 'Trasversal.png'
+        path = 'Trasversalpre.png'
         open_file(path)
 
     def Report_TrasversalIn(self): #Genera el Archivo .dot para la lista  enlazada y Genera la Imagen
         nodonum =0
-        f_output = open('Trasversal.txt','w')
+        f_output = open('Trasversalin.txt','w')
         f_output.write("digraph{\n node[shape = record,style=filled];")
         f_output.write("rankdir=LR;\n")
         f_output.write("label = \"Trasversal Inorden Report\"; \n")
         f_output.write("\n")
         aux = self.print_tree_in_order_traversal()
             #Imprimir Nodos
+        a=""
         for stringnodo in aux:
             f_output.write("\t\t a%d[label=\"{ %s }\"];\n"%(nodonum,stringnodo))
+            a = a + stringnodo + "->"
             nodonum+=1
-
+        print(a)
             #Enlazar Nodos
         for i in range(0,nodonum):
             if i != nodonum-1:
                 f_output.write("\t\t a%s->a%s[color=\"chocolate1\"];\n"%(i,i+1))
         f_output.write("\t }")
         f_output.close()
-        commandfile = 'dot -Tpng Trasversal.txt -o Trasversal.png'
+        commandfile = 'dot -Tpng Trasversalin.txt -o Trasversalin.png'
         start_file(commandfile)
-        path = 'Trasversal.png'
+        path = 'Trasversalin.png'
         open_file(path)
 
     def Report_TrasversalPost(self): #Genera el Archivo .dot para la lista  enlazada y Genera la Imagen
         nodonum =0
-        f_output = open('Trasversal.txt','w')
+        f_output = open('Trasversalpo.txt','w')
         f_output.write("digraph{\n node[shape = record,style=filled];")
         f_output.write("rankdir=LR;\n")
         f_output.write("label = \"Trasversal Postorden Report\"; \n")
         f_output.write("\n")
         aux = self.print_tree_post_order_traversal()
             #Imprimir Nodos
+        a = ""
         for stringnodo in aux:
             f_output.write("\t\t a%d[label=\"{ %s }\"];\n"%(nodonum,stringnodo))
+            a = a + stringnodo + "->"
             nodonum+=1
-
+        print(a)
             #Enlazar Nodos
         for i in range(0,nodonum):
             if i != nodonum-1:
                 f_output.write("\t\t a%s->a%s[color=\"chocolate1\"];\n"%(i,i+1))
         f_output.write("\t }")
         f_output.close()
-        commandfile = 'dot -Tpng Trasversal.txt -o Trasversal.png'
+        commandfile = 'dot -Tpng Trasversalpo.txt -o Trasversalpo.png'
         start_file(commandfile)
-        path = 'Trasversal.png'
+        path = 'Trasversalpo.png'
         open_file(path)
 
 def create_random_node_list():
@@ -333,3 +339,4 @@ avl_tree = create_avl_tree(create_random_node_list())
 avl_tree.graphTree()
 avl_tree.Report_TrasversalPost()
 '''
+
