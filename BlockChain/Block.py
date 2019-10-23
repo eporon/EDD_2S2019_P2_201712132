@@ -41,7 +41,7 @@ class Block:
         f_output.write("\"TIMESTAMP\": \"%s\",\n"%(self.TIMESTAMP))
         f_output.write("\"CLASS\": \"%s\",\n"%(self.CLASS))
         f_output.write("\"DATA\": %s,\n"%(self.DATA))
-        f_output.write("\"PREVIOUSHASH\": \"%s\",\n"%(self.PREVIOUSHAS))
+        f_output.write("\"PREVIOUSHASH\": \"%s\",\n"%(self.PREVIOUSHASH))
         f_output.write("\"HASH\": \"%s\"\n"%(self.HASH))
         f_output.write("}")
         f_output.close()
@@ -51,11 +51,11 @@ class Block:
      def CreateJsonBlock(self):
          jsonstring =""
          jsonstring  = jsonstring + "{"
-         jsonstring  = jsonstring + "\nINDEX:" + self.INDEX
-         jsonstring  = jsonstring + "\nTIMESTAMP:" + self.TIMESTAMP
-         jsonstring  = jsonstring + "\nCLASS:" + self.CLASS
-         jsonstring  = jsonstring + "\nDATA:" + self.DATA 
-         jsonstring  = jsonstring + "\nPREVIOUSHASH:" + self.PREVIOUSHASH
-         jsonstring  = jsonstring + "\nHASH:" + self.HASH
-         jsonstring  = jsonstring + "}"
+         jsonstring  = jsonstring + "\nINDEX:" + str(self.INDEX)
+         jsonstring  = jsonstring + "\nTIMESTAMP:" +  str(self.TIMESTAMP)
+         jsonstring  = jsonstring + "\nCLASS:" +  str(self.CLASS)
+         jsonstring  = jsonstring + "\nDATA:" +  str(self.DATA )
+         jsonstring  = jsonstring + "\nPREVIOUSHASH:" +  str(self.PREVIOUSHASH)
+         jsonstring  = jsonstring + "\nHASH:" +  str(self.HASH)
+         jsonstring  = jsonstring + "\n}"
          return jsonstring 

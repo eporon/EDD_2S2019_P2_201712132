@@ -75,12 +75,16 @@ if __name__ == "__main__":
           noindex = noindex +1
           if(blockchain.is_Empty()):
              bloque = ReadFile(nombrearchivo,noindex,"0000")
-             #bloque.CreateBlock()
+             jsonblock = bloque.CreateJsonBlock()
+             print("El JSON a enviar sera: ")
+             print(jsonblock)
           else:
              pvh = blockchain.get_last()
              bloque = ReadFile(nombrearchivo,noindex,pvh)
-             #bloque.CreateBlock()
-          time.sleep(1)
+             jsonblock = bloque.CreateJsonBlock()
+             print("El JSON a enviar sera: ")
+             print(jsonblock)
+          time.sleep(4)
         
           blockchain.insert_at_end(noindex,bloque)
        if(opcion is 2):
